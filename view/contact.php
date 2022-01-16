@@ -38,7 +38,7 @@
                             <textarea id="message" name="message"></textarea>
                         </div>
                         <div>
-                            <aside>* required</aside>
+                            <p>* required</p>
                             <button type="submit">Submit</button>
                         </div>
                     </form>
