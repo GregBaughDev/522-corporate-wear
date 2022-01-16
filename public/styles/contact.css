@@ -1,0 +1,74 @@
+header + div {
+    padding: 2%;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.contact {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.contact p {
+    width: 80%;
+}
+
+.contact > div {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+form div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+form div:last-child {
+    width: 80%;
+    justify-content: space-between;
+}
+
+form div label {
+    width: 20%;
+}
+
+form div input, form div textarea {
+    width: 80%;
+}
+
+button {
+    width: 50%;
+    height: 50%;
+    font-size: var(--font-l);
+    border: none;
+    background-color: var(--tertiary);
+    color: var(--secondary-first);
+    padding: 2% 0;
+}
+
+aside {
+    font-style: italic;
+}
+
+input, textarea {
+    border: 1px solid var(--secondary-second);
+    border-radius: 0;
+    padding: 1%;
+}
+
+input, textarea, button {
+    font-family: 'Karla', 'Helvetica', sans-serif;
+}
+
+textarea {
+    height: 150px;
+}
