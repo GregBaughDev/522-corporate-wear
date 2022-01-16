@@ -7,7 +7,7 @@
 
             <div class="main-body">
                 <header>
-                    <h1>CorporateWear</h1>
+                    <h1><a href="/522/index.php">CorporateWear</a></h1>
                 </header>
                 <section>
                     <div class="main-img">

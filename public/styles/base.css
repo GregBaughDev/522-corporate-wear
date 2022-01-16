@@ -26,10 +26,11 @@ body {
     font-size: 21px;
 }
 
-h1 {
+h1 a {
     color: var(--tertiary);
     text-align: right;
     font-size: 2.369rem;
+    display: block;
 }
 
 main {
