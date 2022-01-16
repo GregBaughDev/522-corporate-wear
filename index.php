@@ -11,8 +11,8 @@
                 </header>
                 <section>
                     <div class="main-img">
-                        <img src="./public/assets/images/Home/home2.jpg" alt="">
-                        <img src="./public/assets/images/Home/home1.jpg" alt="">
+                        <img src="./public/assets/images/Home/home2.jpg" alt="Image of a waitress">
+                        <img src="./public/assets/images/Home/home1.jpg" alt="Person in plain t shirt">
                     </div>
                     <h2>A new standard in bespoke work clothing</h2>
                     <p>

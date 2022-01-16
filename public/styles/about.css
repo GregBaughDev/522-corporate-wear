@@ -1,0 +1,28 @@
+header + div {
+    padding: 2%;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.about div {
+    width: 48%;
+}
+
+.about div img {
+    width: 100%;
+    height: auto;
+}
+
+div p:first-child {
+    font-weight: bold;
+}
+
+p {
+    margin: 2% 0;
+}
