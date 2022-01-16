@@ -1,0 +1,31 @@
+header {
+    margin-bottom: 2%;
+}
+
+.main-img {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.main-img img {
+    width: 50%;
+    height: auto;
+}
+
+section h2 {
+    font-size: var(--font-xl);
+    text-align: center;
+    margin: 2%;
+}
+
+section p {
+    width: 60%;
+    margin: 2% auto;
+}
+
+section a {
+    text-decoration: underline;
+}
