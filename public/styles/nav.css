@@ -4,10 +4,16 @@
     width: 20%;
 }
 
-aside nav {
+aside:first-child nav {
     display: flex;
     flex-direction: column;
     background-color: var(--tertiary);
+    padding: 5%;
+}
+
+aside:not(:first-child) nav {
+    display: flex;
+    flex-direction: column;
     padding: 5%;
 }
 

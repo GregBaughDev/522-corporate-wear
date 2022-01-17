@@ -8,7 +8,14 @@
         </nav>
     </aside>
 
-    <aside>
-        <!-- Dynamic links -->
-    </aside>
+    <?php
+        if($currPage === 'catalogue') { ?>
+            <aside>
+                <nav>
+                    <a href="/522/view/catalogue.php">All</a>
+                    <a href="/522/view/catalogue.php?fil=clo">Clothing</a>
+                    <a href="/522/view/catalogue.php?fil=mer">Merchandise</a>
+                </nav>
+            </aside>
+    <?php } ?>
 </div>

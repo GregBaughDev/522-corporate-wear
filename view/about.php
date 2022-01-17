@@ -23,7 +23,7 @@
                             That's why presenting a strong image is incredibly important. We can help you create a lasting impression through our excellent range of clothing and merchandise.
                         </p>
                         <p>
-                            Our friendly client liaison team are available to assist with all your needs, requirements and queries. Contact us today! 
+                            Our friendly client liaison team are available to assist with all your needs, requirements and queries. <a id="contact" href="contact.php">Contact us today!</a> 
                         </p>
                         <p>
                             Email: info@corporatewear.com.au<br>

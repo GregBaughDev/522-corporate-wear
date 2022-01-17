@@ -1,3 +1,7 @@
+<?php
+    $currPage = preg_split('~[./?]~', $_SERVER['REQUEST_URI'])[3];
+?>
+
 <!DOCTYPE html>
     <html lang="en">
         <head>

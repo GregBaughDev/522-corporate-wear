@@ -27,6 +27,10 @@ section p {
     margin-bottom: 2%;
 }
 
+#contact {
+    text-decoration: underline;
+}
+
 @media (max-width: 1000px) {
     .about {
         flex-direction: column-reverse;
