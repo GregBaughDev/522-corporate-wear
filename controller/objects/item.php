@@ -18,10 +18,12 @@ class Item {
     function editItem(string $attribute, string $newValue) {
         $this->$attribute = $newValue;
     }
-
-    function getItem(){
-        return $this->name;
+ 
+    function getItem(string $attribute) {
+        return $this->$attribute;
     }
+
 }
+
 
 ?>
