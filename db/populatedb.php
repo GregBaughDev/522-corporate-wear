@@ -17,10 +17,25 @@ $clothing = (
     'Rainjacket',
     'Socks',
     'Handkerchief',
-    'Blouse')
+    'Blouse'
+    )
 
-
-// Create 50 items (25 in each category)
+$merchandise = (
+    'Pen',
+    'Pencil',
+    'Water Bottle',
+    'Notebook',
+    'Mouse pad',
+    'Tote Bag',
+    'Poster',
+    'Flyer',
+    'Keyring',
+    'Hats',
+    'Lanyards',
+    'Mug',
+    'Coffee Keepcup',
+    'Phone Case',
+)
 
 // Loop over and add them to the DB
 
