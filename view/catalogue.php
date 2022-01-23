@@ -21,12 +21,15 @@
                 <section>
                     <h3><?= $headerFilter ?></h3>
                     <div class="cat-display">
-                        <?php for($i = 0; $i < count($allCatalogue); $i++) { ?>
-                            <div>
-                                <h4><?php echo($allCatalogue[$i]['name']) ?></h4>
-                                <img src="../<?php echo($allCatalogue[$i]['img']) ?>" alt="Image of <?php echo($allCatalogue[$i]['name']) ?>">
-                            </div>
-                        <?php } ?>
+                        <?php for($i = 0; $i < count($allCatalogue); $i++) {
+                            if($filterTerm === 'clo' && $allCatalogue[$i]['category'] === 'clothing') {
+                                echo(itemComponent($allCatalogue[$i]['name'], $allCatalogue[$i]['img']));
+                            } else if ($filterTerm === 'mer' && $allCatalogue[$i]['category'] === 'merchandise') {
+                                echo(itemComponent($allCatalogue[$i]['name'], $allCatalogue[$i]['img']));
+                            } else if ($filterTerm === 'All') {
+                                echo(itemComponent($allCatalogue[$i]['name'], $allCatalogue[$i]['img']));
+                            }
+                        } ?>
                     </div>
                 </section>
             </div>
