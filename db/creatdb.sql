@@ -3,10 +3,8 @@ CREATE DATABASE IF NOT EXISTS corporate_wear;
 CREATE TABLE catalogue (
     id int NOT NULL AUTO_INCREMENT,
     name varchar(50) NOT NULL,
-    size ENUM('xs', 's', 'm', 'l', 'xl', 'xxl') NOT NULL,
-    colour varchar(20) NOT NULL,
     category ENUM('clothing', 'merchandise') NOT NULL,
-    gender ENUM('male', 'female', 'unisex') NOT NULL,
+    img varchar(100),
     PRIMARY KEY(id)
 );
 
