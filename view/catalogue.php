@@ -2,7 +2,8 @@
     include("./templates/header.php");
     include("./templates/sidebar.php");
 
-    include("../controller/catalogue.php");
+    include($_SERVER['DOCUMENT_ROOT'] . "/522/model/catalogue.php");
+    include($_SERVER['DOCUMENT_ROOT'] . "/522/controller/catalogue.php");
 
     $filterTerm = isset($_GET['fil']) ? $_GET['fil'] : "All";
     $headerFilter = filter($filterTerm);
@@ -19,6 +20,14 @@
                 </div>
                 <section>
                     <h3><?= $headerFilter ?></h3>
+                    <div class="cat-display">
+                        <?php for($i = 0; $i < count($allCatalogue); $i++) { ?>
+                            <div>
+                                <h4><?php echo($allCatalogue[$i]['name']) ?></h4>
+                                <img src="../<?php echo($allCatalogue[$i]['img']) ?>" alt="Image of <?php echo($allCatalogue[$i]['name']) ?>">
+                            </div>
+                        <?php } ?>
+                    </div>
                 </section>
             </div>
         </main>
