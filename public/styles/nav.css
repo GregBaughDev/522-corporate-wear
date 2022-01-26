@@ -16,9 +16,3 @@ aside:not(:first-child) nav {
     flex-direction: column;
     padding: 5%;
 }
-
-a {
-    font-size: var(--font-l);
-    text-decoration: none;
-    color: unset;
-}

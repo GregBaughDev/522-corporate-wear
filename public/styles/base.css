@@ -40,3 +40,14 @@ main {
 .main-body {
     width: 80%;
 }
+
+a {
+    font-size: var(--font-l);
+    text-decoration: none;
+    color: unset;
+}
+
+a:hover {
+    text-decoration: underline;
+    color:#bb1122;
+}

@@ -23,11 +23,11 @@
                     <div class="cat-display">
                         <?php for($i = 0; $i < count($allCatalogue); $i++) {
                             if($filterTerm === 'clo' && $allCatalogue[$i]['category'] === 'clothing') {
-                                echo(itemComponent($allCatalogue[$i]['name'], $allCatalogue[$i]['img']));
+                                echo(itemComponent($allCatalogue[$i]['name'], $allCatalogue[$i]['img'], $allCatalogue[$i]['id']));
                             } else if ($filterTerm === 'mer' && $allCatalogue[$i]['category'] === 'merchandise') {
-                                echo(itemComponent($allCatalogue[$i]['name'], $allCatalogue[$i]['img']));
+                                echo(itemComponent($allCatalogue[$i]['name'], $allCatalogue[$i]['img'], $allCatalogue[$i]['id']));
                             } else if ($filterTerm === 'All') {
-                                echo(itemComponent($allCatalogue[$i]['name'], $allCatalogue[$i]['img']));
+                                echo(itemComponent($allCatalogue[$i]['name'], $allCatalogue[$i]['img'], $allCatalogue[$i]['id']));
                             }
                         } ?>
                     </div>

@@ -9,7 +9,7 @@
         }
     };
 
-    function itemComponent ($name, $img) {
-        return "<div><h4>$name</h4><img src=\"../$img\" alt=\"Image of $name\"></div>";
+    function itemComponent ($name, $img, $id) {
+        return "<div><a href=\"item.php?id=$id\"><h4>$name</h4></a><img src=\"../$img\" alt=\"Image of $name\"></div>";
     }
 ?>
