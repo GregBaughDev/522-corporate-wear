@@ -15,9 +15,10 @@ CREATE TABLE customer (
     streetAddress varchar(50) NOT NULL,
     city varchar(50) NOT NULL,
     state ENUM('VIC', 'NSW', 'QLD', 'SA', 'WA', 'TAS', 'NT', 'ACT', 'OTHER') NOT NULL,
-    postcode tinyint(4) NOT NULL,
+    postcode int(4) NOT NULL,
     phone varchar(12) NOT NULL,
     email varchar(100) NOT NULL,
+    password varchar(50) NOT NULL,
     PRIMARY KEY (id)
 );
 
