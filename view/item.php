@@ -16,10 +16,31 @@
                 <div>
                     <h2><?= $item[0]['name'] ?></h2>
                 </div>
-                <section>
+                <section class="item-display">
                     <img src="../<?= $item[0]['img'] ?>" alt="image of <?= $item[0]['name'] ?>">
+                    <form action="../controller/order/order.php?item=<?= $item[0]['id'] ?>&cat=<?= $item[0]['category']?>&name=<?= $item[0]['name'] ?>" method="POST">
+                        <label for="quantity">Quantity</label>
+                            <input type="number" name="quantity" id="quantity" min=1 required>
+                        <label for="colour">Colour</label>
+                            <input type="color" name="colour" id="colour" required>
+                        <label for="size">Size</label>
+                            <select name="size" id="size">
+                                <option value="xs">XS</option>
+                                <option value="s">S</option>
+                                <option value="m">M</option>
+                                <option value="l">L</option>
+                                <option value="xl">XL</option>
+                            </select>
+                        <label for="gender">Gender</label>
+                            <select name="gender" id="gender">
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="unisex">Unisex</option>
+                            </select>
+                        <input type="submit" value="Add to order">
+                    </form>
                 </section>
-                <!-- Add quantity, size, colour and add to cart if logged in functions -->
+                <!-- Add if logged in functions -->
             </div>
         </main>
     </body>

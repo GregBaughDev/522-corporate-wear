@@ -9,3 +9,40 @@ h3 {
     font-size: var(--font-xl);
     text-align: center;
 }
+
+.item-display {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.item-display img {
+    width: 60%;
+    height: auto;
+}
+
+.item-display form {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.item-display label, .item-display input {
+    margin: 3% 0 3% 0;
+}
+
+.item-display input:not([type="color"]), .item-display select {
+    padding: 5%;
+    font-family: 'Karla', 'Helvetica', sans-serif;
+}
+
+.item-display input[type="submit"] {
+    margin-top: 5%;
+    width: 100%;
+    padding: 5%;
+    font-family: 'Karla', 'Helvetica', sans-serif;
+    background-color: var(--tertiary);
+    border: none;
+}
