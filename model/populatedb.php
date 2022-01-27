@@ -60,6 +60,9 @@ try {
         VALUES ('test_company', 'test user', '123 test rd', 'Melbourne', 'VIC', '3000', '0480 123 456', 'test@user.com', 'test1234')";
     $newUser = $conn->prepare($newUser);
     $newUser->execute();
+    $departments = "INSERT INTO department (customerId, name) VALUES (1, 'caretakers'), (1, 'FOH')";
+    $departments = $conn->prepare($departments);
+    $departments->execute();
     echo("\n Finished adding to database!");
 } catch (PDOException $e) {
     echo("\n Error adding to database!");

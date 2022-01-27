@@ -2,10 +2,11 @@
     include("../templates/header.php");
     include("../templates/sidebar.php");
 
+    include("../../model/userdepartments.php");
+
     if(!isset($_SESSION['authenticate'])) {
         header("Location: ../login.php");
     }
-
 ?>
 
 <link rel="stylesheet" href="../../public/styles/userdepartments.css">
@@ -18,6 +19,7 @@
                     <h2>My Departments</h2>
                 </div>
                 <section>
+                    
                 </section>
             </div>
         </main>
