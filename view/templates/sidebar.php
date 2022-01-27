@@ -8,6 +8,7 @@
                 <a href="/522/view/login.php">Login</a>
             <?php } else { ?>
                 <a href="/522/controller/logout.php">Logout</a>
+                <a href="/522/view/user/userhome.php">My Home</a>
             <?php } ?>
         </nav>
     </aside>
@@ -24,7 +25,6 @@
     <?php } else if ($currPage === 'user') { ?>
             <aside>
                 <nav>
-                    <a href="/522/view/user/userhome.php">My Home</a>
                     <a href="/522/view/user/userprofile.php">Profile</a>
                     <a href="/522/view/user/userdepartments.php">My Departments</a>
                     <a href="/522/view/user/userorders.php">Orders</a>

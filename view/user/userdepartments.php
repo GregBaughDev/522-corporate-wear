@@ -17,3 +17,9 @@
                 <div>
                     <h2>My Departments</h2>
                 </div>
+                <section>
+                </section>
+            </div>
+        </main>
+    </body>
+</html>

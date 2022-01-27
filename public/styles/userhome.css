@@ -9,3 +9,8 @@ h3 {
     font-size: var(--font-xl);
     text-align: center;
 }
+
+section p {
+    margin-top: 2%;
+    text-align: center;
+}

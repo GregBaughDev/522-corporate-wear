@@ -4,8 +4,32 @@ header + div {
     margin-bottom: 2%;
 }
 
-h3 {
+h3:first {
     font-weight: normal;
     font-size: var(--font-xl);
     text-align: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.profile div h3, .profile div h4 {
+    display: inline;
+}
+
+.profile div h3 {
+    width: 30%;
+    text-align: right;
+}
+
+.profile div h4 {
+    width: 50%;
 }

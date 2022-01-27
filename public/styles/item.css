@@ -29,6 +29,10 @@ h3 {
     align-items: center;
 }
 
+.item-display p {
+    margin-top: 2%;
+}
+
 .item-display label, .item-display input {
     margin: 3% 0 3% 0;
 }
