@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 include($_SERVER['DOCUMENT_ROOT'] . "/522/model/conn/conn.php");
 
 try {
@@ -11,10 +12,10 @@ try {
     $user = $user->fetchAll();
     if(count($user) > 0){
         //redirect w success
-        echo("SUCCESS");
+        $_SESSION['authenticate'] = true;
+        header("Location: ../view/user/userhome.php");
     } else {
-        //redirect w failure
-        echo("FAILURE");
+        eader("Location: ../view/login.php");
     }
 } catch (PDOException $e) {
     error_log($e->getMessage(), 0);

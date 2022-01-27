@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $currPage = preg_split('~[./?]~', $_SERVER['REQUEST_URI'])[3];
 ?>
 

@@ -2,6 +2,9 @@
     include("../templates/header.php");
     include("../templates/sidebar.php");
 
+    if(!isset($_SESSION['authenticate'])) {
+        header("Location: ../login.php");
+    }
 ?>
 
 <link rel="stylesheet" href="../../public/styles/userhome.css">
