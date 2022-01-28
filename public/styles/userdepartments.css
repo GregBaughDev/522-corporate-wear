@@ -50,3 +50,13 @@ svg {
     width: 30px;
     height: 30px;
 }
+
+button {
+    border-width: unset;
+    border-color: unset;
+    border-style: unset;
+    cursor: pointer;
+    background: none;
+    color: unset;
+    font-family: 'Karla', 'Helvetica', sans-serif;
+}
