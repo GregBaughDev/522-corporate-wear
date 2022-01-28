@@ -9,3 +9,44 @@ h3 {
     font-size: var(--font-xl);
     text-align: center;
 }
+
+.depts {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+table {
+    width: 80%;
+}
+
+table td {
+    height: 50px;
+    text-align: center;
+}
+
+.add-dept {
+    width: 20%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--tertiary);
+    padding: 1%;
+}
+
+.add-dept h4 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.add-dept svg {
+    height: 15%;
+    width: 15%;
+}
+
+svg {
+    width: 30px;
+    height: 30px;
+}
