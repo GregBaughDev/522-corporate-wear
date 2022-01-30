@@ -69,3 +69,11 @@ button {
     margin: 2%;
     padding: 2%;
 }
+
+.no-display {
+    display: none;
+}
+
+#add-dept input {
+    font-family: 'Karla', 'Helvetica', sans-serif;
+}

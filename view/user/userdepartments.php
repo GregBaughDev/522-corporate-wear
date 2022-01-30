@@ -49,9 +49,13 @@
                                     </td>
                                 </tr>
                             <?php } ?>
+                            <tr id="add-dept" class="no-display">
+                                <td><form action="../../model/userdepartmentsadd.php" method="POST" id="add-dept-name"><input type="text" name="dept" id="dept-text"></form></td>
+                                <td><button form="add-dept-name" type="submit">Add</button></td>
+                            </tr>
                         </tbody>
                     </table>
-                    <button class="add-dept" type="button" id="add" onClick="deptFunc()">
+                    <button id="add-dept-btn" class="add-dept" type="button">
                         <h4>Add department</h4>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#064663">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -60,5 +64,6 @@
                 </section>
             </div>
         </main>
+        <script src="../../controller/js/userdepartments.js"></script>
     </body>
 </html>

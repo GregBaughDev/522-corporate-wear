@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include($_SERVER['DOCUMENT_ROOT'] . "/522/model/conn/conn.php");
 
     try {
