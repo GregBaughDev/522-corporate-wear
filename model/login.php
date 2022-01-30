@@ -13,6 +13,7 @@
             $_SESSION['authenticate'] = true;
             $_SESSION['user'] = $user;
             header("Location: ../view/user/userhome.php");
+            $_SESSION['orders'] = array();
         } else {
             eader("Location: ../view/login.php");
         }

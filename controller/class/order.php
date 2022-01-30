@@ -18,6 +18,10 @@ class Order {
         $itemLoc = array_search($item, $this->itemArray);
         array_splice($this->itemArray, $itemLoc, 1);
     }
+
+    function orderDept() {
+        return $department;
+    }
     
     function currentOrder() {
         return $this->itemArray;
