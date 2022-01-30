@@ -21,7 +21,7 @@
                         Our friendly client liaison team are available to assist with all your needs, requirements and queries. <a href="./view/contact.php">Contact us today!</a> 
                     </p>
                     <p>
-                    Our current clients include Crown Casino, Treasury Casino and Hotel, The Star Entertainment group and Movie World Resort.
+                        Our current clients include Crown Casino, Treasury Casino and Hotel, The Star Entertainment group and Movie World Resort.
                     </p>
                 </section>
             </div>
