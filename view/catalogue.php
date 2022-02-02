@@ -19,6 +19,9 @@
                     <h2>Catalogue</h2>
                 </div>
                 <section>
+                    <?php if(isset($_GET['item']) && $_GET['item'] === 'add') { ?>
+                        <h4>Item added successfully!</h4>
+                    <?php } ?>
                     <h3><?= $headerFilter ?></h3>
                     <div class="cat-display">
                         <?php for($i = 0; $i < count($allCatalogue); $i++) {

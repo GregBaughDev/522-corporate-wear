@@ -51,3 +51,12 @@ button {
     padding: 5%;
     font-family: 'Karla', 'Helvetica', sans-serif;
 }
+
+svg {
+    width: 30px;
+    height: 30px;
+}
+
+form {
+    width: 25%;
+}

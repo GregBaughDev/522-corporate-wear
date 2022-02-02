@@ -25,6 +25,17 @@ class Item {
         return $this->$attribute;
     }
 
+    function allInfo() {
+        return array(
+            "colour" => $this->colour,
+            "name" => $this->name,
+            "category" => $this->category,
+            "size" => $this->size,
+            "gender" => $this->gender,
+            "qty" => $this->qty
+        );
+    }
+
 }
 
 

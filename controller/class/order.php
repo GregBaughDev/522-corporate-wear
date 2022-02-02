@@ -1,9 +1,9 @@
 <?php
 
 class Order {
-    private $company;
-    private $department;
-    private $itemArray = [];
+    public $company = '';
+    public $department = '';
+    public $itemArray = array();
 
     function __contstruct($company, $department) {
         $this->company = $company;
@@ -20,7 +20,7 @@ class Order {
     }
 
     function orderDept() {
-        return $department;
+        return $this->department;
     }
     
     function currentOrder() {

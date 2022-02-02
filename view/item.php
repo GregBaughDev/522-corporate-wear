@@ -19,7 +19,7 @@
                 <section class="item-display">
                     <img src="../<?= $item[0]['img'] ?>" alt="image of <?= $item[0]['name'] ?>">
                     <?php if(isset($_SESSION['authenticate'])) { ?>
-                        <form action="../controller/order/order.php?item=<?= $item[0]['id'] ?>&cat=<?= $item[0]['category']?>&name=<?= $item[0]['name'] ?>" method="POST">
+                        <form action="../controller/item.php?item=<?= $item[0]['id'] ?>&cat=<?= $item[0]['category']?>&name=<?= $item[0]['name'] ?>" method="POST">
                             <label for="quantity">Quantity</label>
                                 <input type="number" name="quantity" id="quantity" min=1 required>
                             <label for="colour">Colour</label>
