@@ -7,13 +7,15 @@ class Item {
     private $size;
     private $gender;
     private $quantity;
+    private $id;
 
-    function __construct($itemColour, $itemName, $itemCategory, $itemSize, $itemQuantity, $itemGender = "Unisex") {
+    function __construct($itemColour, $itemName, $itemCategory, $itemSize, $itemQuantity, $id, $itemGender = "Unisex") {
         $this->colour = $itemColour;
         $this->name = $itemName;
         $this->category = $itemCategory;
         $this->size = $itemSize;
         $this->quantity = $itemQuantity;
+        $this->id = $id;
         $this->gender = $itemGender;
     }
 
@@ -32,7 +34,7 @@ class Item {
             "category" => $this->category,
             "size" => $this->size,
             "gender" => $this->gender,
-            "qty" => $this->qty
+            "qty" => $this->quantity
         );
     }
 

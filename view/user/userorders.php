@@ -27,13 +27,16 @@
                         </a>
                     <?php } else { ?>
                         <h3>Order for: <?= $_SESSION['orders'][0]['dept'] ?></h3>
-                        <h4>Current items: </h4>
                         <?php foreach($_SESSION['orders'][0]['items'] as $item) { ?>
-                            <h5>Item name: <?= $item->getItem('name') ?></h5>
-                            <h6>Qty: qty</h6>
-                        <?php } ?>
+                            <div class="order-items">
+                                <h5>Item name: <?= $item->getItem('name') ?></h5>
+                                <h6>Qty: <?= $item->getItem('quantity') ?></h6>
+                            </div>
+                            <?php } ?>
                     <?php } ?>
-                    
+                    <form action="../../model/userordersubmit.php" method="POST">
+                            <input type="submit" value="Submit order">
+                    </form>
                 </section>
             </div>
         </main>

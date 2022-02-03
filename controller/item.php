@@ -10,6 +10,7 @@
         $_GET['cat'],
         $_POST['size'],
         $_POST['quantity'],
+        $_GET['item'],
         $_POST['gender']
     );
 
