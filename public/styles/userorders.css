@@ -68,3 +68,13 @@ form {
     align-items: center;
     justify-content: space-between;
 }
+
+.order-submit {
+    width: 50%;
+    background-color: var(--tertiary);
+    padding: 2%;
+    font-family: 'Karla', 'Helvetica', sans-serif;
+    border-width: unset;
+    border-color: unset;
+    border-style: unset;
+}

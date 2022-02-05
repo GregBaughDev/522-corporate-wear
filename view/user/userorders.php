@@ -18,6 +18,17 @@
                     <h2>Orders</h2>
                 </div>
                 <section class="order-display">
+                    <?php if(isset($_GET['succ']) && $_GET['succ'] === 'true') {
+                        unset($_SESSION['orders']);
+                        $_SESSION['orders'] = array(); ?>
+                        <div>
+                            <h3>Order successfully submitted!</h3>
+                        </div>
+                    <?php } else if (isset($_GET['succ']) && $_GET['succ'] === 'false') { ?>
+                        <div>
+                            <h3>Error submitting order</h3>
+                        </div>
+                    <?php } ?>
                     <?php if(count($_SESSION['orders']) === 0) { ?>
                         <a class="add-order-btn" href="./userordersnew.php">
                             <h4>New order</h4>
@@ -34,9 +45,11 @@
                             </div>
                             <?php } ?>
                     <?php } ?>
-                    <form action="../../model/userordersubmit.php" method="POST">
-                            <input type="submit" value="Submit order">
-                    </form>
+                    <?php if(isset($_SESSION['orders'][0]['items']) && count($_SESSION['orders'][0]['items']) > 0) { ?>
+                        <form action="../../model/userordersubmit.php" method="POST">
+                                <input class="order-submit" type="submit" value="Submit order">
+                        </form>
+                    <?php } ?>
                 </section>
             </div>
         </main>

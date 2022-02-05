@@ -29,8 +29,9 @@
             $indItem->bindParam(':gen', $itemGender);
             $indItem->execute();
         }
-        print("added successfully");
+        header("location: ../view/user/userorders.php?succ=true");
     } catch (PDOException $e) {
         error_log($e->getMessage(), 0);
+        header("location: ../view/userorders.php?succ=false");
     }
 ?>
