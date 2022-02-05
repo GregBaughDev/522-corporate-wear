@@ -23,7 +23,7 @@
                         <label for="dept">Department</label>
                             <select name="dept" id="dept">
                                 <?php foreach($departments as $department ) { ?>
-                                    <option value="<?= $department['name'] ?>"><?= $department['name'] ?></option>
+                                    <option value="<?= $department['id'] . ' ' . $department['name']?>"><?= $department['name'] ?></option>
                                 <?php } ?>
                             </select>
                             <button type="submit">

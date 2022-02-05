@@ -15,7 +15,7 @@
             header("Location: ../view/user/userhome.php");
             $_SESSION['orders'] = array();
         } else {
-            eader("Location: ../view/login.php");
+            header("Location: ../view/login.php");
         }
     } catch (PDOException $e) {
         error_log($e->getMessage(), 0);
