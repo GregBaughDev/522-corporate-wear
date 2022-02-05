@@ -19,7 +19,6 @@
                             Please provide as much information as possible and a member of our team will be in touch within 2 business days.
                         </p>
                     </div>
-                    <!-- Add action -->
                     <form>
                         <div>
                             <label for="name">Name *</label>

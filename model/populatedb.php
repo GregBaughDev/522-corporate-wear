@@ -47,7 +47,7 @@ try {
         $insertClothing->bindParam(":name", $clothing[$i]);
         $insertClothing->execute();
     };
-    echo("\nClothing added to database!");
+    echo("Clothing added to database!");
     for($i = 0; $i < count($merchandise); $i++){
         $insertMerchandise = "INSERT INTO corporate_wear.catalogue (name, category, img)
         VALUES (:name, 'merchandise', 'public/assets/images/Catalogue/merch.jpeg')";
@@ -55,7 +55,7 @@ try {
         $insertMerchandise->bindParam(":name", $merchandise[$i]);
         $insertMerchandise->execute();
     };
-    echo("\n Merchandise added to database!");
+    echo("<br> Merchandise added to database!");
     $newUser = "INSERT INTO corporate_wear.customer (company, contact, streetAddress, city, state, postcode, phone, email, password)
         VALUES ('test_company', 'test user', '123 test rd', 'Melbourne', 'VIC', '3000', '0480 123 456', 'test@user.com', 'test1234')";
     $newUser = $conn->prepare($newUser);
@@ -63,9 +63,9 @@ try {
     $departments = "INSERT INTO corporate_wear.department (customerId, name) VALUES (1, 'caretakers'), (1, 'FOH')";
     $departments = $conn->prepare($departments);
     $departments->execute();
-    echo("\n Finished adding to database!");
+    echo("<br> Finished adding to database!");
 } catch (PDOException $e) {
-    echo("\n Error adding to database!");
+    echo("<br> Error adding to database!");
     error_log($e->getMessage(), 0);
 }
 
