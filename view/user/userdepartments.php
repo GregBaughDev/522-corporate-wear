@@ -36,7 +36,7 @@
                         <tbody id="dept-tbody">
                             <?php foreach($departments as $department) { ?>
                                 <tr id="edit-dept">
-                                    <td><?= ucfirst($department['name']) ?></td>
+                                    <td><a href="/522/view/user/userviewdepartment.php?id=<?= $department['id'] ?>"><?= ucfirst($department['name']) ?></a></td>
                                     <td>
                                         <form action="../../model/userdepartmentsdelete.php" method="POST">
                                             <input type="hidden" name="dept" value="<?= $department['id'] ?>">
