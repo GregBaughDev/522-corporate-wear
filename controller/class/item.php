@@ -9,10 +9,9 @@ class Item {
     private $quantity;
     private $id;
 
-    function __construct($itemColour, $itemName, $itemCategory, $itemSize, $itemQuantity, $id, $itemGender = "Unisex") {
+    function __construct($itemColour, $itemName, $itemSize, $itemQuantity, $id, $itemGender = "Unisex") {
         $this->colour = $itemColour;
         $this->name = $itemName;
-        $this->category = $itemCategory;
         $this->size = $itemSize;
         $this->quantity = $itemQuantity;
         $this->id = $id;

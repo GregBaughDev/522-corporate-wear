@@ -1,4 +1,5 @@
 <?php
+    include($_SERVER['DOCUMENT_ROOT'] . "/522/controller/class/item.php");
     include("../templates/header.php");
     include("../templates/sidebar.php");
     include($_SERVER['DOCUMENT_ROOT'] . "/522/model/catalogue.php");
@@ -10,11 +11,6 @@
     
     $sizes = array('XS', 'S', 'M', 'L', 'XL');
     $genders = array('Male', 'Female', 'Unisex');
-
-    // FOR ORDER FORM TO DO!
-    // if(isset($_SESSION['order']) && $_SESSION['order']['id'] === $_GET['id']) {
-    //     var_dump($_SESSION['order']);
-    // }
 
     $id = $_GET['id'];
 
@@ -57,7 +53,8 @@
                                 <tr>
                                     <td>
                                         <form action="../../controller/userviewdepartmentsaddtoorder.php?dept=<?= $_GET['id'] ?>" method="POST">
-                                            <input type="hidden" name="product" value="<?= $deptProduct['id'] ?>"/>
+                                            <input type="hidden" name="product-name" value="<?= $deptProduct['name'] ?>"/>
+                                            <input type="hidden" name="product-id" value="<?= $deptProduct['id'] ?>"/>
                                             <p><?= $deptProduct['name'] ?></p>
                                     </td>
                                     <td>
@@ -137,6 +134,28 @@
                                     <td>Remove from order</td>
                                 </tr>
                             </thead>
+                            <tbody>
+                                <?php foreach($_SESSION['order']['products'] as $order) { ?>
+                                    <tr>
+                                        <td>
+                                            <?= $order->getItem("name") ?>
+                                        </td>
+                                        <td>
+                                            <?= $order->getItem("quantity") ?>
+                                        </td>
+                                        <td>
+                                            <?= $order->getItem("colour") ?>
+                                        </td>
+                                        <td>
+                                            <?= $order->getItem("size") ?>
+                                        </td>
+                                        <td>
+                                            <?= $order->getItem("gender") ?>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
                         </table>
                     </section>
                 <?php } ?>
