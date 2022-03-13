@@ -11,9 +11,10 @@
     $sizes = array('XS', 'S', 'M', 'L', 'XL');
     $genders = array('Male', 'Female', 'Unisex');
 
-    // Submit order
-    // Store each item in an array and submit each item to DB
-    // Confirmation on submit order
+    // FOR ORDER FORM TO DO!
+    // if(isset($_SESSION['order']) && $_SESSION['order']['id'] === $_GET['id']) {
+    //     var_dump($_SESSION['order']);
+    // }
 
     $id = $_GET['id'];
 
@@ -55,37 +56,42 @@
                             <?php foreach($department[1] as $deptProduct) { ?>
                                 <tr>
                                     <td>
-                                        <p><?= $deptProduct['name'] ?></p>
+                                        <form action="../../controller/userviewdepartmentsaddtoorder.php?dept=<?= $_GET['id'] ?>" method="POST">
+                                            <input type="hidden" name="product" value="<?= $deptProduct['id'] ?>"/>
+                                            <p><?= $deptProduct['name'] ?></p>
                                     </td>
                                     <td>
-                                        <input type="number" min="1">
+                                            <input name="qty" type="number" min="1" required>
                                     </td>
                                     <td>
-                                        <input type="color">
+                                            <input name="colour" type="color">
                                     </td>
                                     <td>
-                                        <select name="product-size">
-                                            <?php foreach($sizes as $size) { ?>
-                                                <option value="<?= $size ?>"><?= $size ?></option>
-                                            <?php } ?>
-                                        </select>
+                                            <select name="product-size">
+                                                <?php foreach($sizes as $size) { ?>
+                                                    <option value="<?= $size ?>"><?= $size ?></option>
+                                                <?php } ?>
+                                            </select>
                                     </td>
                                     <td>
-                                        <select name="product-gender">
-                                            <?php foreach($genders as $gender) { ?>
-                                                <option value="<?= $gender ?>"><?= $gender ?></option>
-                                            <?php } ?>
-                                        </select>
+                                            <select name="product-gender">
+                                                <?php foreach($genders as $gender) { ?>
+                                                    <option value="<?= $gender ?>"><?= $gender ?></option>
+                                                <?php } ?>
+                                            </select>
                                     </td>
                                     <td>
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                        </svg>
+                                            <button type="submit">
+                                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                            </button>
+                                        </form>
                                     </td>
                                     <td>
-                                        <form action="../../model/userviewdepartmentsdelete.php?dept=<?=$_GET['id']?>" method="POST">
+                                        <form action="../../model/userviewdepartmentsdelete.php?dept=<?= $_GET['id'] ?>" method="POST">
                                             <input type="hidden" name="product" value="<?= $deptProduct['id'] ?>">
-                                            <button type="submit" value="<?= $department['id'] ?>">
+                                            <button type="submit">
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#064663">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12" />
                                                 </svg>
@@ -96,31 +102,16 @@
                             <?php } ?>
                             <tr id="add-prod" class="no-display">
                                 <td>
-                                    <select name="product-select">
-                                        <?php foreach($allCatalogue as $product) { ?>
-                                            <option value="<?= $product['name'] ?>"><?= $product['name'] ?></option>    
-                                        <?php } ?>
-                                    </select>
+                                    <form action="../../model/userviewdepartmentaddprod.php?deptid=<?= $_GET['id'] ?>" method="POST">
+                                        <select name="product-select">
+                                            <?php foreach($allCatalogue as $product) { ?>
+                                                <option value="<?= $product['id'] ?>"><?= $product['name'] ?></option>    
+                                            <?php } ?>
+                                        </select>
                                 </td>
                                 <td>
-                                    <input type="number" min="1">
-                                </td>
-                                <td>
-                                    <input type="color">
-                                </td>
-                                <td>
-                                    <select name="product-size">
-                                        <?php foreach($sizes as $size) { ?>
-                                            <option value="<?= $size ?>"><?= $size ?></option>
-                                        <?php } ?>
-                                    </select>
-                                </td>
-                                <td>
-                                    <select name="product-gender">
-                                        <?php foreach($genders as $gender) { ?>
-                                            <option value="<?= $gender ?>"><?= $gender ?></option>
-                                        <?php } ?>
-                                    </select>
+                                        <button type="submit">Save to <?= $departmentName ?></button>
+                                    </form>
                                 </td>
                             <tr>
                         </tbody>
@@ -132,7 +123,25 @@
                         </svg>
                     </button>
                 </section>
+                <?php if(isset($_SESSION['order']) && $_SESSION['order']['id'] === $_GET['id']) { ?>
+                    <section>
+                        <h3>Current Order</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Product</td>
+                                    <td>Qty</td>
+                                    <td>Colour</td>
+                                    <td>Size</td>
+                                    <td>Gender</td>
+                                    <td>Remove from order</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </section>
+                <?php } ?>
             </div>
         </main>
+        <script src="../../controller/js/userviewdepartments.js"></script>
     </body>
 </html>
