@@ -12,8 +12,39 @@ h3 {
 
 table {
     width: 100%;
+    text-align: center;
 }
 
 table input {
     width: 75%;
+}
+
+svg {
+    width: 30px;
+    height: 30px;
+}
+
+button {
+    border-width: unset;
+    border-color: unset;
+    border-style: unset;
+    cursor: pointer;
+    background: none;
+    color: unset;
+    font-family: 'Karla', 'Helvetica', sans-serif;
+}
+
+.add-dept {
+    width: 20%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--tertiary);
+    padding: 1%;
+}
+
+.no-display {
+    display: none;
 }
