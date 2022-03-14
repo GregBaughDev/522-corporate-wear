@@ -18,7 +18,7 @@
                 </div>
                 <section class="item-display">
                     <img src="../<?= $item[0]['img'] ?>" alt="image of <?= $item[0]['name'] ?>">
-                    <?php if(isset($_SESSION['authenticate'])) { ?>
+                    <!-- <?php if(isset($_SESSION['authenticate'])) { ?>
                         <form action="../controller/item.php?item=<?= $item[0]['id'] ?>&cat=<?= $item[0]['category']?>&name=<?= $item[0]['name'] ?>" method="POST">
                             <label for="quantity">Quantity</label>
                                 <input type="number" name="quantity" id="quantity" min=1 required>
@@ -42,7 +42,7 @@
                         </form>
                     <?php } else { ?>
                         <p>Login to your account to order this item</p>
-                    <?php } ?>
+                    <?php } ?> -->
                 </section>
             </div>
         </main>

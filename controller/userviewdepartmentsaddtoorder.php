@@ -3,11 +3,6 @@
     include($_SERVER['DOCUMENT_ROOT'] . "/522/model/conn/conn.php");
     include($_SERVER['DOCUMENT_ROOT'] . "/522/controller/class/item.php");
 
-    $_SESSION['order'] = array(
-        "id" => $_GET['dept'],
-        "products" => array()
-    );
-
     $item = new Item(
         $_POST['colour'],
         $_POST['product-name'],
@@ -17,6 +12,12 @@
         $_POST['product-gender']
     );
 
-    array_push($_SESSION['order']['products'], $item);
+    $_SESSION['order'][$_GET['dept']]['id'] = [$_GET['dept']];
+
+    array_push(
+        $_SESSION['order'][$_GET['dept']]['products'],
+        $item
+    );
+
     header("location: ../view/user/userviewdepartment.php?id=" . $_GET['dept']);
 ?>

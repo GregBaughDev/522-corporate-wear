@@ -9,6 +9,10 @@
     $department = retrieveDepartment($_SESSION['user'][0]['id'], $_GET['id'], $conn);
     $departmentName = ucfirst($department[0][0]['name']);
     
+    if (!isset($_SESSION['order'][$_GET['id']]['products'])) {
+        $_SESSION['order'][$_GET['id']]['products'] = array();
+    }
+
     $sizes = array('XS', 'S', 'M', 'L', 'XL');
     $genders = array('Male', 'Female', 'Unisex');
 
@@ -21,6 +25,10 @@
     if(!isset($_GET['id'])) {
         header("Location: ./userdepartments.php");
     }
+
+    if($_GET['succ'] === 'true'){
+        unset($_SESSION['order'][$_GET['id']]['products']);
+    };
 ?>
 
 <link rel="stylesheet" href="../../public/styles/userviewdepartment.css">
@@ -120,7 +128,7 @@
                         </svg>
                     </button>
                 </section>
-                <?php if(isset($_SESSION['order']) && $_SESSION['order']['id'] === $_GET['id']) { ?>
+                <?php if(isset($_SESSION['order'][$_GET['id']]['products']) && count($_SESSION['order'][$_GET['id']]['products']) > 0) { ?>
                     <section>
                         <h3>Current Order</h3>
                         <table>
@@ -135,7 +143,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach($_SESSION['order']['products'] as $order) { ?>
+                                <?php foreach($_SESSION['order'][$_GET['id']]['products'] as $order) { ?>
                                     <tr>
                                         <td>
                                             <?= $order->getItem("name") ?>
@@ -144,7 +152,7 @@
                                             <?= $order->getItem("quantity") ?>
                                         </td>
                                         <td>
-                                            <?= $order->getItem("colour") ?>
+                                            <input type="color" value="<?= $order->getItem("colour") ?>" disabled>
                                         </td>
                                         <td>
                                             <?= $order->getItem("size") ?>
@@ -152,11 +160,29 @@
                                         <td>
                                             <?= $order->getItem("gender") ?>
                                         </td>
-                                        <td></td>
+                                        <td>
+                                            <?php $itemPos = array_search($order, $_SESSION['order'][$_GET['id']]['products']); ?>
+                                            <form action="../../controller/userviewdepartmentsremoveitem.php?dept=<?= $_GET['id'] ?>" method="POST">
+                                                <input type="hidden" name="item-remove" value="<?= $itemPos ?>">
+                                                <button type="submit">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#064663">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12" />
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
                         </table>
+                        <form action="../../controller/userviewdepartmentsubmitorder.php?dept=<?= $_GET['id'] ?>" method="POST">
+                            <button id="add-prod-btn" class="add-dept" type="submit">
+                                <h4>Submit order</h4>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#064663">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </button>
+                        </form>
                     </section>
                 <?php } ?>
             </div>
