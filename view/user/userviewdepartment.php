@@ -26,7 +26,7 @@
         header("Location: ./userdepartments.php");
     }
 
-    if($_GET['succ'] === 'true'){
+    if(isset($_GET['succ']) && $_GET['succ'] === 'true'){
         unset($_SESSION['order'][$_GET['id']]['products']);
     };
 ?>
@@ -43,6 +43,9 @@
                 <section>
                     <?php if (isset($_GET['del']) && $_GET['del'] === '1') { ?> 
                         <h3>Item successfully removed from <?= $departmentName ?></h3>    
+                    <?php } ?>
+                    <?php if (isset($_GET['succ']) && $_GET['succ'] === 'true') { ?>
+                        <h3>Order successfully submitted!</h3>
                     <?php } ?>
                     <table>
                         <thead>
