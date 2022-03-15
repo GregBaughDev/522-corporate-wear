@@ -2,6 +2,7 @@
     include("../../controller/class/item.php");
     include("../templates/header.php");
     include("../templates/sidebar.php");
+    include("../../model/userorders.php");
 
     if(!isset($_SESSION['authenticate'])) {
         header("Location: ../login.php");
@@ -18,7 +19,7 @@
                     <h2>Orders</h2>
                 </div>
                 <section class="order-display">
-                    <?php if(isset($_GET['succ']) && $_GET['succ'] === 'true') {
+                    <!-- <?php if(isset($_GET['succ']) && $_GET['succ'] === 'true') {
                         unset($_SESSION['orders']);
                         $_SESSION['orders'] = array(); ?>
                         <div>
@@ -49,7 +50,7 @@
                         <form action="../../model/userordersubmit.php" method="POST">
                                 <input class="order-submit" type="submit" value="Submit order">
                         </form>
-                    <?php } ?>
+                    <?php } ?> -->
                 </section>
             </div>
         </main>

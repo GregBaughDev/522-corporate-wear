@@ -27,7 +27,7 @@
                 <nav>
                     <a href="/522/view/user/userprofile.php">Profile</a>
                     <a href="/522/view/user/userdepartments.php">My Departments</a>
-                    <!-- <a href="/522/view/user/userorders.php">Orders</a> -->
+                    <a href="/522/view/user/userorders.php">Orders</a>
                 </nav>
             </aside>
     <?php } ?>
