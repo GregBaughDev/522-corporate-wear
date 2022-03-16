@@ -10,71 +10,8 @@ h3 {
     text-align: center;
 }
 
-.add-order-btn, .order-display button {
-    width: 20%;
-    height: 20%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--tertiary);
-    padding: 1%;
-}
-
-.add-order-btn h4, .order-display button h4 {
-    font-size: 1rem;
+table {
+    width: 80%;
     text-align: center;
-}
-
-.order-display button {
-    margin: 5%;
-    width: 50%;
-}
-
-button {
-    border-width: unset;
-    border-color: unset;
-    border-style: unset;
-    cursor: pointer;
-    background: none;
-    color: unset;
-    font-family: 'Karla', 'Helvetica', sans-serif;
-}
-
-.order-display {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.order-display select {
-    padding: 5%;
-    font-family: 'Karla', 'Helvetica', sans-serif;
-}
-
-svg {
-    width: 30px;
-    height: 30px;
-}
-
-form {
-    width: 25%;
-}
-
-.order-items {
-    display: flex;
-    flex-direction: row;
-    width: 45%;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.order-submit {
-    width: 50%;
-    background-color: var(--tertiary);
-    padding: 2%;
-    font-family: 'Karla', 'Helvetica', sans-serif;
-    border-width: unset;
-    border-color: unset;
-    border-style: unset;
+    margin: 0 auto;
 }
