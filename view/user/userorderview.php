@@ -13,7 +13,6 @@
     }
 
     $order = retrieveOrder($conn, $_GET['order']);
-    var_dump($order);
 ?>
 
 <link rel="stylesheet" href="../../public/styles/userorders.css">
@@ -26,8 +25,28 @@
                     <h2>Order <?= $_GET['order'] ?></h2>
                 </div>
                 <section>
-
-
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Product</td>
+                                <td>Qty</td>
+                                <td>Colour</td>
+                                <td>Gender</td>
+                                <td>Type</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($order as $row) { ?>
+                                <tr>
+                                    <td><?= $row['name'] ?></td>
+                                    <td><?= $row['qty'] ?></td>
+                                    <td><input type="color" value="<?= $row['colour'] ?>" disabled></td>
+                                    <td><?= $row['gender'] ?></td>
+                                    <td><?= $row['category'] ?></td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
                 </section>
             </div>
         </main>
